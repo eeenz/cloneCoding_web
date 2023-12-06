@@ -1,29 +1,97 @@
-header {}
-header h1 {}
+header {
+    font-family: 'Noto Sans KR', sans-serif;
+}
+header h1 {
+    display: inline-block;
+    text-align: left;
+    
+}
 header h1 a {}
-header h1 a img {}
-header nav {}
-header nav .active {}
+header h1 a img {
+    width: 60px; 
+}
+header nav {
+    text-align: center;
+}
+header nav .active {
+    color:#36b4e5;
+}
 header nav a {}
-header .lnb {}
+header .lnb {
+    text-align: right;
+}
 header .lnb a {}
-main {}
+main {
+    font-family: 'Noto Sans KR', sans-serif;
+    text-align: center;
+}
 main .path {}
-main .path dd {}
+main .path dd {
+    background-color: #f1f1f1;
+    text-align: right;
+    padding: 15px 80px 15px 0;
+    border-top: 1px solid #aaa;
+    border-bottom: 1px solid #aaa;
+}
 main .path dd a {}
-main h1 {}
-main p {}
-main .bg {}
-main .bg p {}
+main. path dd em {font-weight: 700;}
+main h1 {
+    font-size:2.5rem;
+    margin: 50px 0 20px 0;
+}
+main p {
+    font-size:1.125rem;
+    margin: 0 0 50px 0;
+}
+main .bg {
+    background-color: #f1f1f1;
+    padding: 50px 0 10px 0;
+}
+main .bg p {
+    font-size:1.125rem;
+    line-height: 1.3;
+}
 main .vision {}
-main .vision h2 {}
-main .vision p {}
-main .goal_strategy {}
-main .goal_strategy h2 {}
-main .goal_strategy ul {}
-main .goal_strategy ul .first {}
-main .goal_strategy ul li {}
-main .goal_strategy ul .last {}
+main .vision h2 {
+    color: #36b4e5;
+    font-size: 1.313rem;
+    margin-top:50px;
+}
+main .vision p {
+    font-size: 1.938rem;
+    margin-top:10px;
+}
+main .goal_strategy {
+    background-color: #f1f1f1;
+}
+main .goal_strategy h2 {
+    padding-top: 50px;
+    font-size: 1.313rem;
+}
+main .goal_strategy ul {
+    padding: 50px 0 10px 0;
+}
+main .goal_strategy ul .first {
+    display: inline-block;
+    padding: 60px 0 50px 0 ;
+    border:1px solid #36b4e5;
+    width:150px; height:150px;
+    border-radius:50%;
+}
+main .goal_strategy ul li {
+    display: inline-block;
+    padding: 60px 0 50px 0 ;
+    border:1px solid #fff;
+    width:150px; height:150px;
+    border-radius:50%;
+}
+main .goal_strategy ul .last {
+    display: inline-block;
+    padding: 60px 0 50px 0 ;
+    border:1px solid #f3c300;
+    width:150px; height:150px;
+    border-radius:50%;
+}
 main .goal_strategy ul li h3 {}
 main .goal_strategy ul li p {}
 footer {}
