@@ -2,14 +2,30 @@
 
 header {
     font-family: 'Noto Sans KR', sans-serif;
+    height: 92px;
+    display:flex;
+    flex-flow:row wrap;
+    justify-content:space-between;
+    padding: 15px 50px;
+    align-items:center;
 }
 header h1 {}
 header h1 a {}
-header h1 a img {}
+header h1 a img {
+    height: 60px; 
+}
 header nav {}
-header nav a {}
-header nav .active {}
-header .lnb {}
+header nav a {
+    font-weight: 500;
+    padding-right: 10px;
+}
+header nav a:nth-child(5) {padding-right: 0;}
+header nav .active {
+    color:#36b4e5;
+}
+header .lnb {
+    float: right;
+}
 header .lnb a {}
 
 /* main */
@@ -112,11 +128,30 @@ main .goal_strategy ul li p {
 
 footer {
     font-family: 'Noto Sans KR', sans-serif;
+    padding: 0 50px;
 }
-footer .top {}
+footer .top {
+    padding-top: 50px;
+    display:flex;
+    flex-flow: row nowrap;
+    justify-content:space-between    
+}
 footer .top .left {}
-footer .top .left a {}
+footer .top .left a {
+    font-weight: 700;
+    margin-right: 20px;
+}
 footer .top .right {}
-footer .top .right a {}
-footer address {}
-footer .copyright {}
+footer .top .right a {
+    border:1px solid #ccc;
+    padding: 5px 20px;
+    display:inline-block;
+}
+footer address {
+    clear:both;
+    padding:20px 0 20px 0;
+    line-height:25px;
+}
+footer .copyright {
+    margin-bottom: 50px;
+}
