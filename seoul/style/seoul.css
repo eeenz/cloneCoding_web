@@ -72,10 +72,156 @@ header .bottom .right .weather .current_weather {
     letter-spacing: -0.03rem; padding:5px 0;
 }
 /* main1행 */
+main {}
+main > * {width:1151px; margin:0 auto;}
 /* main1행-banner */
+main .visual {
+    display: flex; justify-content: space-between;
+}
+main .visual .banner_left {
+    width: 770px; height: 350px;
+    position: relative;
+}
+main .visual .banner_left a {}
+main .visual .banner_left a img {}
+main .visual .banner_left .close {
+    background-color: #1e6cb3; color: #fff;
+    border-radius: 4px;
+    font-size: 0.813rem;
+    padding: 4px 9px; 
+    display: inline-block;
+    position:absolute; right:15px; bottom: 15px;
+}
 /* main1행-right(코로나, 교통정보) */
-/* main2행-주요서비스 */
-/* main3행-배너3 */
+main .visual .banner_right {
+    width: 350px; 
+}
+main .visual .banner_right .corona {
+    position: relative; display: block;
+    margin-bottom: 15px;
+}
+main .visual .banner_right .corona img {width: 100%;}
+main .visual .banner_right .corona .date {
+    font-size: 0.813rem;
+    position: absolute;
+    right:20px; top:14px;
+}
+main .visual .banner_right .corona .data {
+    font-size: 0.813rem;
+    position: absolute;
+    text-align: center;
+}
+main .visual .banner_right .corona .data:nth-child(3) {
+    text-align: center;
+    width: 130px; height: 13px;
+    left: 30px; top: 84px;
+} /* 확진자 */
+main .visual .banner_right .corona .data:nth-child(4) {
+    text-align: center;
+    width: 130px; height: 13px;
+    top:84px; right: 29px;
+} /* 추가확진자 */ 
+main .visual .banner_right .corona .data:nth-child(5) {
+    text-align: center;
+    width: 94px; height: 13px;
+    top: 159px; left:30px; 
+} /* 퇴원 */
+main .visual .banner_right .corona .data:nth-child(6) {
+    text-align: center;
+    width: 94px; height: 13px;
+    top: 159px; left:145px; 
+} /* 추가퇴원 */
+main .visual .banner_right .corona .data:nth-child(7) {
+    text-align: center;
+    width: 53px; height: 13px;
+    top: 159px; right:32px;
+} /* 사망 */
+main .visual .banner_right .traffic {}
+main .visual .banner_right .traffic img {width:100%;}
+
+/* main2행-주요서비스(쌤이랑) */
+main .title_survice {}
+main .title_survice .title {
+    display: flex; flex-flow: row nowrap;
+    justify-content: space-between;
+    padding: 15px 0;
+}
+main .title_survice .title h1 {
+    font-size:1.5rem;
+    font-weight:600;
+    letter-spacing: -2px;
+}
+main .title_survice .title .site {
+    border:1px solid #aaa;
+    padding: 5px 10px; font-size:0.938rem;
+}
+main .title_survice .contents {
+    display: flex; flex-flow: row nowrap;
+}
+main .title_survice .contents a {
+    /* a한테 display: flex;를 적용하면 display: block;을 쓴것과 같은 의미로 적용된다. */
+    display: flex; flex-flow: column nowrap;
+    /*  글씨크기가 다르니까 이미지 크기가 들쭉날쭉 => 
+    글씨 크기를 100% 보고 이미지 11개를 나누면 9.0909...
+    따라서 width에 그 값을 쓴다. */
+    width: 9.09%; 
+    text-align: center;
+}
+main .title_survice .contents a img {
+    width: 60px; margin: 0 auto;
+}
+main .title_survice .contents a span {
+    font-size: 0.813rem;
+}
+/* main2행-주요서비스 (나혼자) */
+/* main .title_survice {
+    margin:0 auto;
+    margin-top: 54px; margin-bottom: 80px;
+    width:1151px; height:160px;
+}
+main .title_survice .title {
+    display: flex; flex-flow: row nowrap;
+    justify-content: space-between;
+    padding-bottom:20px;
+    border-bottom:1px solid #ccc;
+}
+main .title_survice .title h1 {
+    font-size:1.5rem;
+    font-weight:600;
+    letter-spacing: -2px;
+}
+main .title_survice .title .site {
+    border:1px solid #aaa;
+    padding: 5px 10px; font-size:0.938rem;
+}
+main .title_survice .contents {
+    padding-top:20px;
+    display:flex; flex-flow:row nowrap;
+    justify-content:space-between;
+    align-content:center;
+}
+main .title_survice .contents a {
+    text-align: center;
+    font-size: 0.85rem;
+}
+main .title_survice .contents a img {
+    display: block;
+} */
+/* main3행-배너3 (쌤이랑) */
+main .bnr_bg {
+    background-color: #eff4f8;
+    width:1920px;
+}
+main .bnr_bg .bnr {
+    width:1151px; margin:0 auto;
+    display: flex;
+}
+main .bnr_bg .bnr a {display: block;}
+main .bnr_bg .bnr a img {}
+/* main3행-배너3 (내가)*/
+/* main .bg {}
+main .bg a {}
+main .bg a img {} */
 /* main4행-게시판 */
 /* main4행-게시판-이벤트신청 */
 /* main4행-게시판-이달행사축제 */
