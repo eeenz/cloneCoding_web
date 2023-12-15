@@ -29,5 +29,4 @@
     footer .top {display: flex; flex-flow: column nowrap;}
     footer .top .site {margin-top: 15px;}
     footer .top .site .sub {right:-40px;}
-    footer .top .site .sub a:hover {width:200px}
 } /*769 end*/
