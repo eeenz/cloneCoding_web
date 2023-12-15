@@ -16,30 +16,105 @@ header nav a:last-child {margin-right: 0;}
 header .recruitment {color: #fff;}
 header .recruitment .fa-circle-chevron-right {color: #17a2b8;}
 /* main */
-main {}
-main .visual {}
-main .visual video {}
-main .visual .logo {}
+main {
+    background-color: #f1f1f1;
+    padding-bottom: 50px;
+}
+main .visual {
+    height:650px; overflow:hidden;
+    position: relative;
+}
+main .visual video {width:100%;}
+main .visual .logo {
+    position:absolute; left:0 ; top:25%; z-index:500;
+    width:100%; text-align:center;
+}
 main .visual .logo img {}
+main .board , main .gallery { /* 2개를 묶어서 작성해줌 ,로 / 가로 크기및 박스 크기 맞추려고 */
+    max-width:1200px; /* 가로크기 1200px */
+    margin: 50px auto 0; /* 상50px 가운데 정렬 하단0 */
+    display: flex; flex-flow: row nowrap; /* 정렬 옆으로 해야되니까 */
+    justify-content: space-between;
+}
+main .board a, main .gallery a { /* 2개를 묶어서 작성해줌 ,로 / 백그라운드 넣어주기 위해*/
+    background-color: #fff; display:block; /* a가인라인이라 인식 못해서 */
+    border-radius: 5px; 
+    margin: 0 10px; 
+    padding: 20px 20px;
+    width:calc(100% / 3 - 40px / 3);
+}
 main .board {}
-main .board a {}
-main .board a .category {}
-main .board a h2 {}
-main .board a .contents {}
+main .board a {/* width:calc(33.33% - 20px); */}
+main .board a .category {margin-bottom: 5px;}
+main .board a h2 {
+    font-size: 1.5rem; font-weight: 700;
+    line-height: 1.5; color: #333;
+}
+main .board a:nth-child(1) .contents {color: #aaa; margin-top: 40px;}
+main .board a .contents {
+    margin-bottom: 30px; 
+    line-height: 1.6; 
+}
 main .gallery {}
 main .gallery a {}
 main .gallery a .category {}
 main .gallery a .photo {}
-main .gallery a .photo img {}
-main .gallery a h2 {}
-main .gallery a h2 .contents {}
+main .gallery a .photo img {
+    width:100%; /* 부모의 크기를 따라가니까 100% */
+    margin: 15px 0;
+} 
+main .gallery a h2 {
+    font-size: 1.5rem; font-weight: 800; letter-spacing: -0.2px;
+    line-height: 1.5; color: #333;
+    padding: 0 10px;
+}
+main .gallery a .contents {
+    line-height: 1.6; color: #aaa;
+    padding: 0 10px;
+    margin-bottom: 30px; 
+}
 /* footer */
-footer {}
-footer .top {}
+footer {
+    border-top:1px solid #aaa; padding: 40px 0;
+}
+footer .top , footer address {
+    max-width: 1200px; margin: 0 auto; /* 선은 끝까지 나가있으므로 max-width를 따로 준다 */
+}
+footer .top {
+    display: flex; flex-flow: row nowrap;
+    justify-content: space-between;
+    padding: 15px 0;
+    align-items: center; 
+}
 footer .top .f_nav {}
 footer .top .f_nav a {}
-footer .top .site {}
-footer .top .site > a {}
-footer .top .site .sub {}
-footer .top .site .sub a {}
-footer address {}
+footer .top .f_nav a:last-child::after {display: none;} /*마지막자식은 숨겨주기*/
+footer .top .f_nav a::after {
+    /* 필수 속성 */ content: ''; display: inline-block; /* 필수 속성 */
+    width:1px; height: 14px; background-color: #aaa;
+    margin:0 4px 0 7px;
+}
+footer .top .site {position: relative; /*sub의 부모*/}
+footer .top .site > a {
+    background-color: #222; color: #fff;
+    display: block; border-radius: 5px; padding: 15px 20px;
+}
+footer .top .site .sub {
+    display: none; /* 버튼 클릭시 보이는거라 내용은 숨겨놔야 하므로 = 초기 숨기기 */
+    position: absolute; 
+    background-color: #fff; 
+    width:200px; right: 0; bottom:50px; 
+    border:1px solid #aaa ; 
+    border-radius: 5px;
+}
+footer .top .site .sub a {
+    border-bottom:1px solid #aaa ; 
+    padding: 20px 20px;
+    display: block;
+    color: #007bff; text-align: left; font-weight: 500; 
+}
+footer .top .site:hover .sub {display:block;} /* site에 (마우스)올리면(hover) 자식 sub가 보인다(none->block) */
+footer address {
+    color: #aaa; line-height: 1.6;
+    padding: 0 20px;
+}
