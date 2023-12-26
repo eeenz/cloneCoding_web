@@ -1,0 +1,35 @@
+.h_bg {border-bottom: 1px solid #aaa;}
+.h_bg header {
+    width:1200px; height: 100px; margin:0 auto;
+    background-color: aquamarine;
+    display: flex; justify-content:space-between; align-items: center; 
+}
+.h_bg header h1 {}
+.h_bg header h1 a {}
+.h_bg header h1 a img {}
+.h_bg header .right {display: flex;} /* 오른쪽 아이콘과 왼쪽 네비 정렬 */
+.h_bg header .right nav {}
+.h_bg header .right nav .gnb {display: flex;} /* 네비 정렬 */
+.h_bg header .right nav .gnb > li {}
+.h_bg header .right nav .gnb > li > a {
+    display: block; background-color: aqua; width: 120px;
+}
+/* sub menu */
+.h_bg header .right nav .gnb > li .lnb_bg {
+    position: absolute; left:0; top:100px; width:100%;
+    background-color: tomato;
+}
+.h_bg header .right nav .gnb > li .lnb_bg .lnb_container {
+    width:1200px; margin: 0 auto; background-color: beige;
+    display: flex; /* left right 옆으로 나열시키려고 */
+}
+.h_bg header .right nav .gnb > li .lnb_bg .lnb_container .left {width:50%;}
+.h_bg header .right nav .gnb > li .lnb_bg .lnb_container .left a {}
+.h_bg header .right nav .gnb > li .lnb_bg .lnb_container .left a img {}
+.h_bg header .right nav .gnb > li .lnb_bg .lnb_container .right {width:50%}
+.h_bg header .right nav .gnb > li .lnb_bg .lnb_container .right ul {width:120px}
+.h_bg header .right nav .gnb > li .lnb_bg .lnb_container .right ul li {line-height:30px;}
+.h_bg header .right nav .gnb > li .lnb_bg .lnb_container .right ul li a {}
+.h_bg header .right .user_all {}
+.h_bg header .right .user_all a {}
+.h_bg header .right .user_all a img {}
