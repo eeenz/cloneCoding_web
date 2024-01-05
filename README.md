@@ -44,7 +44,7 @@
     - 2. `i[class$=d]`, `i[class$=a-a]`, `i[class$=-icon]`
     - 3. `i[class*=apple]`, `i[class*=fa]`, `i[class*=le]`
     - 4. `i[class=fa-solid]`, `i[class=fa-apple-icon]`
-* ex) `<img src="https://naver.com/logo.jpg" title="설명" alt="자세한 설명">
+* ex) `<img src="https://naver.com/logo.jpg" title="설명" alt="자세한 설명">`
     - 1. `img[src^=http]`, `img[title^=설]`, `img[alt^=자]`
     - 2. `img[src$=jpg]`, `img[title$=명]`
     - 3. `img[src*=naver]`, `img[src*=logo]`
