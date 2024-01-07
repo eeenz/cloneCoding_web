@@ -57,3 +57,23 @@ delivery_info.addEventListener('click', function(){
 delivery_popup_close.addEventListener('click', function(){
     delivery_popup.style = 'display: none';
 })
+
+// 목표) 배송 1/9 (화) 도착 예정 94% 메뉴를 클릭하면 메뉴 펼침 정보 나타나기
+// 1. 펼침 메뉴 초기 숨기기
+// 2. 배송1/9(화) 도착 예정 94% 메뉴 클릭 시 
+// 3. 위(2)의 둥근 모서리 하단 모양 뾰족하게 변경
+// 4. 위(2)의 94% 옆 화살표 상하 반전 하기
+// 5. 메뉴 펼침 정보 보이기
+const benefit_shipping = document.querySelector('.right_container .benefit_shipping');
+const delivery_menu = benefit_shipping.querySelector('.delivery_menu');
+const delivery_menu_open = benefit_shipping.querySelector('.delivery_menu_open');
+const delivery_btn_arrow = delivery_menu.querySelector('i[class$=down]');
+console.log(benefit_shipping,delivery_menu,delivery_menu_open,delivery_btn_arrow);
+
+delivery_menu_open.style = 'display:none';
+
+delivery_menu.addEventListener('click',function(){
+    delivery_menu_open.style = 'display:block;';
+    delivery_menu.style = 'border-bottom-right-radius: 0; border-bottom-left-radius:0;';
+    delivery_btn_arrow.style = 'transform: rotate(180deg);';
+})
