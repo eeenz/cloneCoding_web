@@ -20,7 +20,9 @@ ul,ol,li {list-style:none;}
 button {cursor:pointer; background: 0; border: 0;}
 table,tr,td,th {border-collapse:collapse;}
 fieldset {border: 0;}
-input, select, option {background: none; border:0;}
+select{outline:none; border:0; appearance:none; background: none;}
+button{background: none; cursor: pointer; border:0;}
+input{outline:none; border:0; background: none;}
 /* html에서 의미적으로 존재하나 css디자인상에선 숨겨야하는 요소 */
 .skip {display:none;}
 /* font-awesome unicode 전용 클래스 */

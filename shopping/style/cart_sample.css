@@ -8,7 +8,6 @@ main .item_detail .left_thumbnail {
     display: flex; flex-flow: row nowrap;
 }
 main .item_detail .right_container {
-    background-color: lightyellow;
     width:481px;
 }
 /* left_thumbnail */
@@ -219,53 +218,127 @@ main .item_detail .right_container .benefit_shipping dd:nth-of-type(2) > .delive
     font-size: 0.75rem; color:#757575; line-height: 1.6; padding: 20px 15px; letter-spacing: -0.4px;
 }
 /* right - 브랜드 바로가기 */
-main .item_detail .right_container .brand_link {}
-main .item_detail .right_container .brand_link .name {}
-main .item_detail .right_container .brand_link .name i[class$=shop] {}
-main .item_detail .right_container .brand_link .link {}
-main .item_detail .right_container .brand_link .link span {}
-main .item_detail .right_container .brand_link .link i[class$=right] {}
+main .item_detail .right_container .brand_link {
+    border-top:1px solid #bdbdbd;
+    display: flex; justify-content: space-between;
+    padding: 15px 0;
+}
+main .item_detail .right_container .brand_link .name {font-size: 0.938rem;}
+main .item_detail .right_container .brand_link .name i[class$=shop] {
+    color:#bdbdbd; font-size: 14px; margin-right: 5px;
+}
+main .item_detail .right_container .brand_link .link {
+    background: #f5f5f5; border-radius: 14px; padding: 4px 10px;
+}
+main .item_detail .right_container .brand_link .link span {
+    font-size: 0.813rem; letter-spacing: -0.3px;
+}
+main .item_detail .right_container .brand_link .link i[class$=right] {
+    font-size: 0.813rem; margin-left: 5px;
+}
 /* right_container-form */
-main .item_detail .right_container #itemFrm {}
+main .item_detail .right_container #itemFrm {
+    display: flex; flex-flow: column nowrap;
+}
 main .item_detail .right_container #itemFrm fieldset {}
+main .item_detail .right_container #itemFrm fieldset:nth-child(1) {
+    display: flex; flex-flow: column nowrap;
+}
+main .item_detail .right_container #itemFrm fieldset:nth-child(2) {
+    border-top: 1px solid #dbdbdb; display: flex;
+    margin-top: 10px; padding: 15px 0; justify-content: space-between;
+    align-items: center;
+}
+main .item_detail .right_container #itemFrm fieldset:nth-child(3) {
+    display: grid;
+    grid-template-areas: 
+        'coupon coupon'
+        'cart buy';
+    grid-template-rows: auto 50px; /* 버튼 크기 (가로, 세로) */
+}
 /* right_container-form 색상, 사이즈 선택메뉴 (공통) */
 main .item_detail .right_container #itemFrm fieldset #colorOpt,
-main .item_detail .right_container #itemFrm fieldset #sizeOpt {}
+main .item_detail .right_container #itemFrm fieldset #sizeOpt {
+    background: #fff url(../dog_images/caret-down-solid_blue.svg) no-repeat 97% center; 
+    border-radius: 4px; font-size: 0.938rem;
+    padding: 10px; margin-bottom: 7px;
+}
 main .item_detail .right_container #itemFrm fieldset #colorOpt option,
 main .item_detail .right_container #itemFrm fieldset #sizeOpt option {}
 /* right_container-form 색상, 사이즈 선택메뉴 (개별) */
-main .item_detail .right_container #itemFrm fieldset #colorOpt {}
+main .item_detail .right_container #itemFrm fieldset #colorOpt {
+    border: 1px solid #35c5f0;
+}
 main .item_detail .right_container #itemFrm fieldset #colorOpt option {}
-main .item_detail .right_container #itemFrm fieldset #sizeOpt {}
+main .item_detail .right_container #itemFrm fieldset #sizeOpt {
+    border: 1px solid #bdbdbd;
+}
 main .item_detail .right_container #itemFrm fieldset #sizeOpt option {}
 /* right_container-form 색상, 사이즈 모든 옵션 선택 시 open 내용(공통) */
-main .item_detail .right_container #itemFrm fieldset .selectResult {}
-main .item_detail .right_container #itemFrm fieldset .selectResult .opt_list {}
+main .item_detail .right_container #itemFrm fieldset .selectResult {
+    background: #f5f5f5; display: grid; 
+    grid-template-areas: 
+        'group1 group1'
+        'group2 group3'
+    ;
+    justify-content: space-between;
+    position: relative;
+    padding: 10px;
+}
+/* right_container-form 색상, 사이즈 모든 옵션 선택 시 open 내용 - 부모그룹 */
+main .item_detail .right_container #itemFrm fieldset .selectResult .opt_list {
+    grid-area: group1; margin-bottom: 20px;
+}
+main .item_detail .right_container #itemFrm fieldset .selectResult .num_result {
+    background: #fff; border: 1px solid #bdbdbd;
+    grid-area: group2; display:flex; justify-content: space-between; align-items: center; height: 30px;
+}
+main .item_detail .right_container #itemFrm fieldset .selectResult .order_price {
+    grid-area: group3; text-align: right;
+}
+/* right_container-form 색상, 사이즈 모든 옵션 선택 시 open 내용 - 자식그룹 */
 main .item_detail .right_container #itemFrm fieldset .selectResult .opt_list .opt1, 
 main .item_detail .right_container #itemFrm fieldset .selectResult .opt_list .opt2 {}
 main .item_detail .right_container #itemFrm fieldset .selectResult .num_result #minus,
-main .item_detail .right_container #itemFrm fieldset .selectResult .num_result #plus {}
+main .item_detail .right_container #itemFrm fieldset .selectResult .num_result #plus {
+    width: 17px; height: 17px; 
+}
 /* right_container-form 색상, 사이즈 모든 옵션 선택 시 open 내용(개별) */
 main .item_detail .right_container #itemFrm fieldset .selectResult .opt_list .opt1 {}
 main .item_detail .right_container #itemFrm fieldset .selectResult .opt_list .opt2 {}
-main .item_detail .right_container #itemFrm fieldset .selectResult .num_result {}
 main .item_detail .right_container #itemFrm fieldset .selectResult .num_result #minus {}
-main .item_detail .right_container #itemFrm fieldset .selectResult .num_result #num_count {}
+main .item_detail .right_container #itemFrm fieldset .selectResult .num_result #num_count {
+    width: 17px; height: 17px;
+}
 main .item_detail .right_container #itemFrm fieldset .selectResult .num_result #plus {}
-main .item_detail .right_container #itemFrm fieldset .selectResult .order_price {}
-main .item_detail .right_container #itemFrm fieldset .selectResult .close {}
+main .item_detail .right_container #itemFrm fieldset .selectResult .close {
+    position: absolute; right: 10px; top:10px; transform:scaleY(80%);
+}
 /* right_container-form 주문금액 */
-main .item_detail .right_container #itemFrm fieldset:nth-child(2) h2 {}
-main .item_detail .right_container #itemFrm fieldset:nth-child(2) .order_price {}
+main .item_detail .right_container #itemFrm fieldset:nth-child(2) h2 {font-size: 0.875rem;}
+main .item_detail .right_container #itemFrm fieldset:nth-child(2) .order_price {
+    font-size: 1.25rem; font-weight: 700; letter-spacing: -0.5px;
+}
 /* right_container-form 쿠폰받기 */
-main .item_detail .right_container #itemFrm fieldset:nth-child(3) .coupon {}
+main .item_detail .right_container #itemFrm fieldset:nth-child(3) .coupon {
+    grid-area: coupon; display: flex; justify-content: space-between; padding: 10px 0;
+}
 main .item_detail .right_container #itemFrm fieldset:nth-child(3) .coupon > span {}
 main .item_detail .right_container #itemFrm fieldset:nth-child(3) .coupon > .get {}
 main .item_detail .right_container #itemFrm fieldset:nth-child(3) .coupon > .get span {}
 main .item_detail .right_container #itemFrm fieldset:nth-child(3) .coupon > .get i[class$=download] {}
 /* right_container-form 장바구니, 바로구매(공통) */
 main .item_detail .right_container #itemFrm fieldset:nth-child(3) #cart,
-main .item_detail .right_container #itemFrm fieldset:nth-child(3) #buy {}
+main .item_detail .right_container #itemFrm fieldset:nth-child(3) #buy {
+    border-radius: 4px; text-align: center; letter-spacing: -0.5px; font-weight: 600;
+    border:1px solid #35c5f0;
+}
 /* right_container-form 장바구니, 바로구매(개별) */
-main .item_detail .right_container #itemFrm fieldset:nth-child(3) #cart {}
-main .item_detail .right_container #itemFrm fieldset:nth-child(3) #buy {}
+main .item_detail .right_container #itemFrm fieldset:nth-child(3) #cart {
+    background: #fff; color: #35c5f0; 
+    grid-area: cart;
+}
+main .item_detail .right_container #itemFrm fieldset:nth-child(3) #buy {
+    background: #35c5f0; color:#fff; 
+    grid-area: buy;
+}
