@@ -31,12 +31,20 @@ small_thum[5].addEventListener('mouseover',function(){
 const price_info = item_detail.querySelector('.price i[class$=info]');
 const price_info_open = item_detail.querySelector('.price .open');
 console.log(price_info,price_info_open);
+let price_info_open_status = false;
 
 // price_info_open.style.display = 'none';
 price_info_open.style = 'display:none';
+price_info_open_status = false;
 
 price_info.addEventListener('click',function(){
-    price_info_open.style = 'display:block';
+    if(price_info_open_status == false){
+        price_info_open.style = 'display:block';
+        price_info_open_status = !price_info_open_status;
+    }else{
+        price_info_open.style = 'display:none';
+        price_info_open_status = !price_info_open_status;
+    }    
 })
 
 // 내일 출발 i 클릭 시 팝업 출력하고 팝업 내 x 클릭 시 팝업 닫히기 JS
@@ -56,26 +64,40 @@ delivery_info.addEventListener('click', function(){
 
 delivery_popup_close.addEventListener('click', function(){
     delivery_popup.style = 'display: none';
+    selectResult_status = false;
 })
 
 // 목표) 배송 1/9 (화) 도착 예정 94% 메뉴를 클릭하면 메뉴 펼침 정보 나타나기
 // 1. 펼침 메뉴 초기 숨기기
-// 2. 배송1/9(화) 도착 예정 94% 메뉴 클릭 시 
-// 3. 위(2)의 둥근 모서리 하단 모양 뾰족하게 변경
-// 4. 위(2)의 94% 옆 화살표 상하 반전 하기
-// 5. 메뉴 펼침 정보 보이기
 const benefit_shipping = document.querySelector('.right_container .benefit_shipping');
 const delivery_menu = benefit_shipping.querySelector('.delivery_menu');
 const delivery_menu_open = benefit_shipping.querySelector('.delivery_menu_open');
 const delivery_btn_arrow = delivery_menu.querySelector('i[class$=down]');
 console.log(benefit_shipping,delivery_menu,delivery_menu_open,delivery_btn_arrow);
-
+// 2. 배송1/9(화) 도착 예정 94% 메뉴 클릭 시 
+let delivery_menu_open_status = false //현재 상태 변수(false==숨김)
 delivery_menu_open.style = 'display:none';
 
 delivery_menu.addEventListener('click',function(){
-    delivery_menu_open.style = 'display:flex;';
-    delivery_menu.style = 'border-bottom-right-radius: 0; border-bottom-left-radius:0;';
-    delivery_btn_arrow.style = 'transform: rotate(180deg);';
+    if(delivery_menu_open_status == false){
+        console.log(delivery_menu_open_status) //open
+        // 3. 위(2)의 둥근 모서리 하단 모양 뾰족하게 변경
+        delivery_menu.style = 'border-bottom-right-radius: 0; border-bottom-left-radius:0;';
+        // 4. 위(2)의 94% 옆 화살표 상하 반전 하기
+        delivery_btn_arrow.style = 'transform: rotate(180deg);';
+        // 5. 메뉴 펼침 정보 보이기
+        delivery_menu_open.style = 'display:flex;';
+        delivery_menu_open_status = !delivery_menu_open_status; //상태 반전
+    }else{
+        console.log(delivery_menu_open_status) //close 
+        // 3. 위(2)의 둥근 모서리 하단 모양 둥글게 변경
+        delivery_menu.style = 'border-bottom-right-radius: 5px; border-bottom-left-radius:5px;';
+        // 4. 위(2)의 94% 옆 화살표 상하 반전 하기
+        delivery_btn_arrow.style = 'transform: rotate(0deg);';
+        // 5. 메뉴 펼침 정보 숨기기
+        delivery_menu_open.style = 'display:none';       
+        delivery_menu_open_status = !delivery_menu_open_status; //상태 반전
+    }
 })
 
 // 목표) 상품 색상, 사이즈 옵션을 선택했을 때 선택 정보가 selectResult에 결과 값으로 출력되고 num_result의 구매 수량에 따라 order_price에 가격이 출력되는 결과
@@ -102,7 +124,10 @@ console.log(colorOpt,sizeOpt);
 console.log(colorOpt.options[1].value);
 console.log(colorOpt.options[1].value.text);
 console.log('-----------');
+
 selectResult.style = 'display:none';
+sizeOpt.disabled = true; // size select 비활성화
+
 // colorOpt, sizeOpt text데이터를 모두 변수로 수집 후
 // createElement, appendChild 를 이용해서 opt1, opt2 선택 데이터 출력하기
 const selectResult_color = document.createElement('span')
@@ -121,6 +146,7 @@ colorOpt.addEventListener('change',function(){ //select의 값 = 'change'
     console.log(colorOpt.options[colorOpt.selectedIndex].text);
     selectResult_color.innerHTML = colorOpt.options[colorOpt.selectedIndex].text;
     console.log(selectResult_color);
+    sizeOpt.disabled = false; // size select 활성화
 })
 sizeOpt.addEventListener('change',function(){
     // 선택 option 데이터 저장하기
@@ -130,6 +156,7 @@ sizeOpt.addEventListener('change',function(){
     
     // 선택옵션 부모 보이기
     selectResult.style = 'display:grid';
+    selectResult_status = true;    
 
     // 선택옵션 적용 대상에 위 option 데이터값 출력하기
     selectResult_view[0].appendChild(selectResult_color);
@@ -146,31 +173,66 @@ sizeOpt.addEventListener('change',function(){
 
 selectResult_close.addEventListener('click',function(){
     selectResult_close.parentElement.style = 'display:none'; //parentNode : 공백까지 잡히므로 parentElement 사용
+    selectResult_status = false;
 })
-
 const minus_btn = document.querySelector('#minus')
 const plus_btn = document.querySelector('#plus')
 let total = 0;
+
 // 수량 -, + 버튼 클릭 시 수량값이 변경되며 그에 따라 가격 변동
-minus_btn.addEventListener('click',function(){
-    // 1. 수량 1감소
-    num -= 1;
-    // 1-1. 수량 1 감소한 값 표시
-    numView.value = num 
-    // 2. 가격 (수량*가격) 감소
-    total = num*price;
-    // 구매가 세자리 콤마 표시
-    priceView.innerHTML = total.toLocaleString('ko-kr')+'원';
-    priceTotalView.innerHTML = total.toLocaleString('ko-kr')+'원';
+// 최소 구매 수량1, 최대 구매 수량 7
+// 최소 구매 수량 입니다,
+// 재고 7개로 더 구매할 수 없습니다.(팝업으로 출력)
+minus_btn.addEventListener('click',()=>{
+    if(num > 1){
+        // 1. 수량 1감소
+        num --;
+        // 1-1. 수량 1 감소한 값 표시
+        numView.value = num 
+        // 2. 가격 (수량*가격) 감소
+        total = num*price;
+        // 구매가 세자리 콤마 표시
+        priceView.innerHTML = total.toLocaleString('ko-kr')+'원';
+        priceTotalView.innerHTML = total.toLocaleString('ko-kr')+'원';
+    }else{
+        alert('최소 구매 수량입니다.')
+    }
 })
-plus_btn.addEventListener('click',function(){
-    // 1. 수량 1증가
-    num += 1;
-    // 1-1. 수량 1 증가한 값 표시
-    numView.value = num //값을 표시해준다
-    // 2. 가격 (수량*가격) 증가
-    total = num*price;
-    // 구매가 세자리 콤마 표시
-    priceView.innerHTML = total.toLocaleString('ko-kr')+'원';
-    priceTotalView.innerHTML = total.toLocaleString('ko-kr')+'원';
+plus_btn.addEventListener('click',()=>{
+    if(num < 7){
+        // 1. 수량 1증가
+        num ++;
+        // 1-1. 수량 1 증가한 값 표시
+        numView.value = num //값을 표시해준다
+        // 2. 가격 (수량*가격) 증가
+        total = num*price;
+        // 구매가 세자리 콤마 표시
+        priceView.innerHTML = total.toLocaleString('ko-kr')+'원';
+        priceTotalView.innerHTML = total.toLocaleString('ko-kr')+'원';
+    }else{
+        alert('재고 7개로 더 구매할 수 없습니다.')
+    }
+})
+// 옵션을 선택하지 않았을 때 장바구니를 클릭 하면 '옵션을 선택해 주세요'팝업
+// 옵션을 선택했을 때 바로구매를 클릭하면 '구매하러 이동하시겠습니까?'팝업
+const cartBtn = document.querySelector('#itemFrm #cart')
+const buyBtn = document.querySelector('#itemFrm #buy')
+let selectResult_status = false; // option 선택으로 selectResult 값이 ==>true면 장바구니상품이 담겼습니다.
+
+cartBtn.addEventListener('click',()=>{
+    if(selectResult_status == false){
+        alert('옵션을 선택해 주세요') 
+        //위 2곳의 영역에서 true와 false 추가
+        //1.(selectResult 영역이 display:grid로 활성화 됐을때 =>true)
+        //2.(selectResult 영역이 x버튼으로 비활성화 됐을때 =>flase)
+    }else{
+        alert('장바구니에 상품이 담겼습니다.')
+    }
+})
+buyBtn.addEventListener('click',()=>{
+    if(selectResult_status == true){
+        alert('구매하러 이동하시겠습니까?') 
+    }else{
+        alert('선택된 상품이 없습니다. 상품을 선택해 주세요') 
+    }
 })
