@@ -1,0 +1,158 @@
+/* all */
+/* #login_wrap main */
+#login_wrap main {
+    background-color: beige;
+    max-width: 460px;
+    margin: 0 auto;
+}
+#login_wrap main #loginFrm {
+    /* border:1px solid #ccc; border-radius: 5px; */
+}
+#login_wrap main #loginFrm fieldset {}
+/* 탭 제목 */
+#login_wrap main #loginFrm fieldset .login_title {
+    display: flex; 
+}
+#login_wrap main #loginFrm fieldset .login_title h2 {
+    width: calc(100% / 3); text-align: center;
+    background: #f8f9fa;
+    border:1px solid #e3e3e3; border-radius: 0px;
+    height: 60px; display: flex; justify-content: center; align-items: center;
+    border-bottom-left-radius: 0; border-bottom-right-radius: 0; 
+}
+#login_wrap main #loginFrm fieldset .login_title .active {
+    /* 탭 제목 활성화 대상 */
+    background: #fff; border-bottom-color: #fff; 
+    border-top-left-radius: 5px; border-top-right-radius: 5px;
+} 
+#login_wrap main #loginFrm fieldset .login_title .active::after {
+    content: ''; display: inline-block;
+    background: url(../images/m_sp_login.png) 0 -158px; 
+    width: 15px; height: 60px;
+    background-size: 266px 255px; 
+    transform: translate(7px, 0px);
+}
+#login_wrap main #loginFrm fieldset .login_title h2:last-child {border-top-right-radius: 5px;}
+#login_wrap main #loginFrm fieldset .login_title h2 a {
+    width: 100%; line-height: 60px; position: relative;
+}
+/* 탭 제목 ----- 아이콘 */
+#login_wrap main #loginFrm fieldset .login_title h2 a > span:first-child::before,
+#login_wrap main #loginFrm fieldset .login_title h2 a > em:first-child::before {
+    background-image: url(../images/m_sp_login.png);
+    background-size: 251px 210px;
+    background-position: -231px;
+    content: ''; display: inline-block; width: 16px; height: 16px;
+    margin-right: 5px;
+    transform: translateY(2px);  /* 아이콘 살짝 아래로 내려서 맞춰줌 */ 
+}
+#login_wrap main #loginFrm fieldset .login_title h2:first-child > a > span::before {background-position-y: -100px;}
+#login_wrap main #loginFrm fieldset .login_title h2:nth-child(2) > a > span::before {background-position-y: -62px;}
+#login_wrap main #loginFrm fieldset .login_title h2:last-child > a > em::before {background-position-y: -119px;}
+/* 탭 제목 QR코드 */
+#login_wrap main #loginFrm fieldset .login_title h2 a > em {}
+#login_wrap main #loginFrm fieldset .login_title h2 a > .popup {
+    background: #fff; border:1px solid #03c75a; box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border-radius: 12px; padding: 4px 10px; position: absolute; 
+    left: 50%; transform: translate(-50%, -72px);
+    display: flex; justify-content: space-between; align-items: center; 
+    width: max-content; /* 가로크기 글자에 맞춰서 */
+}
+#login_wrap main #loginFrm fieldset .login_title h2 a > .popup em {
+    color: #03c75a; font-size: 0.625rem; line-height: 14px;
+
+}
+#login_wrap main #loginFrm fieldset .login_title h2 a > .popup .close {
+    color: #03c75a; font-size: 0.625rem; line-height: 14px;
+}
+/* 탭 내용 */
+#login_wrap main #loginFrm fieldset .login_container {}
+/* 탭 내용 - id, 일회용, qr 공통 클래스*/
+#login_wrap main #loginFrm fieldset .login_container .login_c {}
+/* 탭 내용 - 개별 클래스*/
+/* ID로그인 */
+/* ID로그인 -----아이디, 비밀번호 입력 */
+#login_wrap main #loginFrm fieldset .login_container .id_login {background: lightgreen;}
+#login_wrap main #loginFrm fieldset .login_container .id_login .id_pw_input {}
+#login_wrap main #loginFrm fieldset .login_container .id_login .id_pw_input input {}
+#login_wrap main #loginFrm fieldset .login_container .id_login .id_pw_input #userId {}
+#login_wrap main #loginFrm fieldset .login_container .id_login .id_pw_input #userPw {}
+#login_wrap main #loginFrm fieldset .login_container .id_login .id_pw_state {}
+/* ID로그인 -----로그인 상태유지 */
+#login_wrap main #loginFrm fieldset .login_container .id_login .id_pw_state .login_state {}
+#login_wrap main #loginFrm fieldset .login_container .id_login .id_pw_state .login_state input[name*=state] {}
+#login_wrap main #loginFrm fieldset .login_container .id_login .id_pw_state .login_state label[for*=state] {}
+/* ID로그인 -----IP보안 */
+#login_wrap main #loginFrm fieldset .login_container .id_login .id_pw_state .ip_state {}
+#login_wrap main #loginFrm fieldset .login_container .id_login .id_pw_state .ip_state input[name*=state] {}
+#login_wrap main #loginFrm fieldset .login_container .id_login .id_pw_state .ip_state label[for*=state] {}
+#login_wrap main #loginFrm fieldset .login_container .id_login .id_pw_state .ip_state label[for*=state] .txt {}
+#login_wrap main #loginFrm fieldset .login_container .id_login .id_pw_state .ip_state label[for*=state] .switch_bg {}
+#login_wrap main #loginFrm fieldset .login_container .id_login .id_pw_state .ip_state label[for*=state] .switch_bg .switch {}
+/* ID로그인 -----error message */
+#login_wrap main #loginFrm fieldset .login_container .id_login .error_message {}
+/* ID로그인 -----로그인 버튼 */
+#login_wrap main #loginFrm fieldset .login_container .id_login .login_btn_wrap {}
+#login_wrap main #loginFrm fieldset .login_container .id_login .login_btn_wrap #loginBtn {}
+/* 일회용번호 */
+#login_wrap main #loginFrm fieldset .login_container .disposable_login {
+    background: pink;
+}
+#login_wrap main #loginFrm fieldset .login_container .disposable_login .tap2_coment {}
+#login_wrap main #loginFrm fieldset .login_container .disposable_login .tap2_coment p {}
+#login_wrap main #loginFrm fieldset .login_container .disposable_login .tap2_coment p em {}
+#login_wrap main #loginFrm fieldset .login_container .disposable_login .tap2_coment p em span {}
+#login_wrap main #loginFrm fieldset .login_container .disposable_login .tap2_coment p em span[class*=icon] {}
+#login_wrap main #loginFrm fieldset .login_container .disposable_login .tap2_coment p em span[class$=setting] {}
+#login_wrap main #loginFrm fieldset .login_container .disposable_login .tap2_coment p em span[class$=more] {}
+#login_wrap main #loginFrm fieldset .login_container .disposable_login .tap2_coment p em span[class$=icon_q] {}
+/* 일회용번호 ----- 번호입력칸 */
+#login_wrap main #loginFrm fieldset .login_container .disposable_login .input_area {}
+#login_wrap main #loginFrm fieldset .login_container .disposable_login .input_area #input_num {}
+/* 일회용번호 ----- 번호입력칸 , error 메세지 */
+#login_wrap main #loginFrm fieldset .login_container .disposable_login .error_message {}
+/* 일회용번호 ----- 로그인 버튼 */
+#login_wrap main #loginFrm fieldset .login_container .disposable_login .btn_area {}
+#login_wrap main #loginFrm fieldset .login_container .disposable_login .btn_area .tap2_loginBtn {}
+/* QR코드 */
+#login_wrap main #loginFrm fieldset .login_container .qr_login {
+    background: yellow;
+}
+/* QR코드 --------이미지, 남은시간 */
+#login_wrap main #loginFrm fieldset .login_container .qr_login {}
+#login_wrap main #loginFrm fieldset .login_container .qr_login .qr_code {}
+#login_wrap main #loginFrm fieldset .login_container .qr_login .qr_code .left {}
+#login_wrap main #loginFrm fieldset .login_container .qr_login .qr_code .left img {width: 100px;}
+#login_wrap main #loginFrm fieldset .login_container .qr_login .qr_code .right {}
+#login_wrap main #loginFrm fieldset .login_container .qr_login .qr_code .right p {}
+#login_wrap main #loginFrm fieldset .login_container .qr_login .qr_code .right p em {}
+/* QR코드 --------내용 */
+#login_wrap main #loginFrm fieldset .login_container .qr_comment {}
+#login_wrap main #loginFrm fieldset .login_container .qr_comment p {}
+/* QR코드 --------서브내용, QR코드 번호입력, 도움말 */
+#login_wrap main #loginFrm fieldset .login_container .sub_ment {}
+#login_wrap main #loginFrm fieldset .login_container .sub_ment p {}
+#login_wrap main #loginFrm fieldset .login_container .sub_ment p span {}
+#login_wrap main #loginFrm fieldset .login_container .sub_ment p span[class*=icon] {}
+#login_wrap main #loginFrm fieldset .login_container .sub_ment p span[class$=naver_app] {}
+#login_wrap main #loginFrm fieldset .login_container .sub_ment p span[class$=lense] {}
+#login_wrap main #loginFrm fieldset .login_container .sub_ment p span[class$=icon_q] {}
+#login_wrap main #loginFrm fieldset .login_container .sub_ment p em {}
+#login_wrap main #loginFrm fieldset .login_container .sub_ment p .qr_num {}
+/* QR코드 --------만료 페이지, error 메세지 */
+#login_wrap main #loginFrm fieldset .login_container .qr_error_comment {}
+#login_wrap main #loginFrm fieldset .login_container .qr_error_comment .error_img {}
+#login_wrap main #loginFrm fieldset .login_container .qr_error_comment .error_img span {}
+#login_wrap main #loginFrm fieldset .login_container .qr_error_comment .qr_error_comment {}
+#login_wrap main #loginFrm fieldset .login_container .qr_error_comment .qr_error_comment p {}
+#login_wrap main #loginFrm fieldset .login_container .qr_error_comment .return {}
+#login_wrap main #loginFrm fieldset .login_container .qr_error_comment .return a {}
+#login_wrap main #loginFrm fieldset .login_container .qr_error_comment .return a span {}
+#login_wrap main #loginFrm fieldset .login_container .qr_error_comment .return a .icon_re {}
+#login_wrap main #loginFrm fieldset .login_container .qr_error_comment .return a span em {}
+/* 찾기 ~ 광고 */
+#login_wrap main .search {}
+#login_wrap main .search a {}
+#login_wrap main .advertising {}
+#login_wrap main .advertising a {}
+#login_wrap main .advertising a img {width: 100%;}

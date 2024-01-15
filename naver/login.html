@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>naver | 로그인</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/reset.css">
+    <link rel="stylesheet" href="./styles/common.css">
+    <link rel="stylesheet" href="./styles/login.css">
+</head>
+<body>
+    <div id="login_wrap">
+        <select name="lang_select" id="lang_select">
+            <option value="ko">한국어</option>
+            <option value="en">English</option>
+        </select>
+        <header><h1><a href="#" title="NAVER"></a></h1></header>
+        <main>
+            <form action="#" method="post" id="loginFrm">
+                <fieldset>
+                    <legend class="skip">ID 로그인, 일회용번호, QR코드 양식</legend>
+                    <!-- 제목 탭 구성 -->
+                    <div class="login_title">
+                        <h2 class="active"><a href="#"><span>ID 로그인</span></a></h2>
+                        <h2><a href="#"><span>일회용 번호</span></a></h2>
+                        <h2><a href="#">
+                            <em>QR코드</em>
+                            <span class="popup">
+                                <em>PC방 등 공용 PC라면 QR코드 로그인이 더 안전해요</em>
+                                <span class="close">x</span>
+                            </span>
+                        </a></h2>
+                    </div>
+                    <!-- 내용 탭 구성 -->
+                    <div class="login_container">
+                        <!-- 내용 탭1. ID 로그인 -->
+                        <div class="login_c id_login">
+                            <div class="id_pw_input">
+                                <input type="text" placeholder="아이디" id="userId">
+                                <input type="password" placeholder="비밀번호" id="userPw">
+                            </div>
+                            <div class="id_pw_state">
+                                <div class="login_state">
+                                    <input type="checkbox" name="login_state_y" id="login_state_y">
+                                    <label for="login_state_y">로그인 상태 유지</label>
+                                </div>
+                                <div class="ip_state">
+                                    <input type="checkbox" name="ip_state_y" id="ip_state_y">
+                                    <label for="ip_state_y">
+                                        <span class="txt">IP보안</span>
+                                        <span class="switch_bg">
+                                            <span class="switch"></span>
+                                        </span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="error_message"><!-- JS--></div>
+                            <div class="login_btn_wrap">
+                                <button type="button" id="loginBtn"></button>
+                            </div>
+                        </div>
+                        <!-- 내용 탭2. 일회용번호 -->
+                        <div class="login_c disposable_login">
+                            <div class="tap2_coment">
+                                <p>네이버앱의<em>메뉴 > 설정<span class="icon 
+                                    setting"></span > 로그인 아이디 관리 >
+                                    더보기 <span class="icon more"></span > 일회용 로그인 번호</em>에 보이는 번호를 입력해 주세요.</p>
+                                <a href="#"><span class="icon icon_q"></span></a>
+                            </div>
+                            <div class="input_area">
+                                <input type="text" placeholder="번호를 입력하세요." id="input_num" name="input_num">
+                            </div>
+                            <div class="error_message"><!-- JS--></div>
+                            <div class="btn_area">
+                                <button type="button" class="tap2_loginBtn"></button>
+                            </div>
+                        </div>
+                        <!-- 내용 탭3. QR코드 -->
+                        <div class="login_c qr_login">
+                            <div class="qr_code">
+                                <div class="left">
+                                    <img src="./images/qr.svg" alt="qr코드를 인식해 주세요">
+                                </div>
+                                <div class="right">
+                                    <p>남은시간</p>
+                                    <p><em><!--js--></em></p>
+                                </div>
+                            </div>
+                            <div class="qr_comment">
+                                <p>공용 네트워크, 공용 PC라면 안전을 위해
+                                    QR코드로 로그인해주세요.</p>
+                            </div>
+                            <div class="sub_ment">
+                                <p>네이버 앱 <span class="icon naver_app"></span> > 렌즈 <span class="icon lense"></span>를 눌러 QR코드를 스캔하여
+                                    보이는 숫자 중 <em class="qr_num"></em>를 선택하면 로그인 됩니다. <span class="icon icon_q"></span></p>
+                            </div>
+                            <div class="qr_error_container">
+                                <div class="error_img"><span></span></div>
+                                <div class="qr_error_comment">
+                                    <p>해당 QR코드의 유효시간이 지났습니다.<br>
+                                        다시 로그인을 시도하시겠습니까?</p>
+                                </div>
+                                <div class="return">
+                                    <a href="#">
+                                        <span class="icon_re"></span>
+                                        <span><em>재시도</em></span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+            <div class="search">
+                <a href="#">비밀번호 찾기</a>
+                <a href="#">아이디 찾기</a>
+                <a href="#">회원가입</a>
+            </div>
+            <div class="advertising">
+                <a href="#"><img src="./images/bnr.png" alt="NAVER 클립 크리에이터 모집중. 활동비에 상금까지 총 12억원"></a>
+            </div>
+        </main>
+        <footer>
+            <div class="f_menu">
+                <a href="#">이용약관</a>
+                <a href="#">개인정보처리방침</a>
+                <a href="#">책임의 한계와 법적고지</a>
+                <a href="#">회원정보 고객센터</a>
+            </div>
+            <address>
+                <span class="logo">NAVER</span>
+                <span class="copy">
+                    Copyright &copy; NAVER Corp. All rights Reserved.
+                </span>
+            </address>
+        </footer>
+    </div>
+    <script src="./script/login.js"></script>
+</body>
+</html>
