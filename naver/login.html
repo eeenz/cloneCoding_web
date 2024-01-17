@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>naver | 로그인</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles/reset.css">
     <link rel="stylesheet" href="./styles/common.css">
@@ -64,17 +65,17 @@
                         <!-- 내용 탭2. 일회용번호 -->
                         <div class="login_c disposable_login">
                             <div class="tap2_coment">
-                                <p>네이버앱의<em>메뉴 > 설정<span class="icon 
-                                    setting"></span > 로그인 아이디 관리 >
-                                    더보기 <span class="icon more"></span > 일회용 로그인 번호</em>에 보이는 번호를 입력해 주세요.</p>
+                                <p>네이버앱의<em> 메뉴 &gt; 설정<span class="icon 
+                                    setting"></span >  &gt; 로그인 아이디 관리 &gt;<br>
+                                    더보기 <i class="fa-solid fa-ellipsis-vertical"></i> 일회용 로그인 번호</em>에 보이는 번호를 입력해 주세요.</p>
                                 <a href="#"><span class="icon icon_q"></span></a>
                             </div>
                             <div class="input_area">
-                                <input type="text" placeholder="번호를 입력하세요." id="input_num" name="input_num">
+                                <span><input type="text" placeholder="번호를 입력하세요." id="input_num" name="input_num"></span>
                             </div>
                             <div class="error_message"><!-- JS--></div>
                             <div class="btn_area">
-                                <button type="button" class="tap2_loginBtn"></button>
+                                <button type="button" class="tap2_loginBtn">로그인</button>
                             </div>
                         </div>
                         <!-- 내용 탭3. QR코드 -->
@@ -89,11 +90,11 @@
                                 </div>
                             </div>
                             <div class="qr_comment">
-                                <p>공용 네트워크, 공용 PC라면 안전을 위해
+                                <p>공용 네트워크, 공용 PC라면 안전을 위해<br>
                                     QR코드로 로그인해주세요.</p>
                             </div>
                             <div class="sub_ment">
-                                <p>네이버 앱 <span class="icon naver_app"></span> > 렌즈 <span class="icon lense"></span>를 눌러 QR코드를 스캔하여
+                                <p>네이버 앱 <span class="icon naver_app"></span> > 렌즈 <span class="icon lense"></span>를 눌러 QR코드를 스캔하여<br>
                                     보이는 숫자 중 <em class="qr_num"></em>를 선택하면 로그인 됩니다. <span class="icon icon_q"></span></p>
                             </div>
                             <div class="qr_error_container">
@@ -105,7 +106,7 @@
                                 <div class="return">
                                     <a href="#">
                                         <span class="icon_re"></span>
-                                        <span><em>재시도</em></span>
+                                        <span><em></em></span>
                                     </a>
                                 </div>
                             </div>

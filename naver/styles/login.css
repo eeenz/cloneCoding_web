@@ -139,7 +139,7 @@
     transition: 0.2s linear;
 }
 /* ID로그인 -----error message */
-#login_wrap main #loginFrm fieldset .login_container .id_login .error_message {}
+#login_wrap main #loginFrm fieldset .login_container .id_login .error_message {color:#f00; font-size: 0.8rem; padding: 10px 0;}
 /* ID로그인 -----로그인 버튼 */
 #login_wrap main #loginFrm fieldset .login_container .id_login .login_btn_wrap {}
 #login_wrap main #loginFrm fieldset .login_container .id_login .login_btn_wrap #loginBtn {
@@ -148,57 +148,130 @@
     font-size: 1.25rem;
 }
 /* 일회용번호 */
-#login_wrap main #loginFrm fieldset .login_container .disposable_login {
-    background: pink;
+#login_wrap main #loginFrm fieldset .login_container .disposable_login {padding-top: 20px;}
+#login_wrap main #loginFrm fieldset .login_container .disposable_login .tap2_coment {
+    text-align: center; padding-bottom: 30px;
 }
-#login_wrap main #loginFrm fieldset .login_container .disposable_login .tap2_coment {}
-#login_wrap main #loginFrm fieldset .login_container .disposable_login .tap2_coment p {}
-#login_wrap main #loginFrm fieldset .login_container .disposable_login .tap2_coment p em {}
+#login_wrap main #loginFrm fieldset .login_container .disposable_login .tap2_coment p {
+    font-weight: 300; line-height: 1.4; color:#333;
+}
+#login_wrap main #loginFrm fieldset .login_container .disposable_login .tap2_coment p em {
+    color: #03c75a; font-weight: 300;
+}
 #login_wrap main #loginFrm fieldset .login_container .disposable_login .tap2_coment p em span {}
 #login_wrap main #loginFrm fieldset .login_container .disposable_login .tap2_coment p em span[class*=icon] {}
-#login_wrap main #loginFrm fieldset .login_container .disposable_login .tap2_coment p em span[class$=setting] {}
+#login_wrap main #loginFrm fieldset .login_container .disposable_login .tap2_coment p em span[class$=setting] {
+    content: ''; display: inline-block;
+    background-image:url(../images/m_sp_login.png);
+    width: 17px; height: 17px;
+    background-size: 251px 210px;
+    position: relative; z-index: 100; top: 0px; left: 0px;
+    background-position: -80px -161px;
+    transform: translateY(4px); margin-right: 3px;
+}
 #login_wrap main #loginFrm fieldset .login_container .disposable_login .tap2_coment p em span[class$=more] {}
-#login_wrap main #loginFrm fieldset .login_container .disposable_login .tap2_coment p em span[class$=icon_q] {}
+#login_wrap main #loginFrm fieldset .login_container .disposable_login .tap2_coment a span[class$=icon_q] {
+    content: ''; display: inline-block;
+    background-image:url(../images/m_sp_login.png);
+    width: 12px; height: 12px;
+    background-size: 251px 210px;
+    position: relative; z-index: 100; top: 0px; left: 0px;
+    background-position: -186px -47px;
+    color: #333;
+}
 /* 일회용번호 ----- 번호입력칸 */
-#login_wrap main #loginFrm fieldset .login_container .disposable_login .input_area {}
-#login_wrap main #loginFrm fieldset .login_container .disposable_login .input_area #input_num {}
+#login_wrap main #loginFrm fieldset .login_container .disposable_login .input_area {
+    border:1px solid #ccc; border-radius: 5px; box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    display: flex; flex-flow: column nowrap; background: #fff; 
+}
+#login_wrap main #loginFrm fieldset .login_container .disposable_login .input_area span {
+    position: relative; padding-left: 10px;
+}
+#login_wrap main #loginFrm fieldset .login_container .disposable_login .input_area span #input_num::placeholder {
+    color:#aaa; text-align: center;
+}
+#login_wrap main #loginFrm fieldset .login_container .disposable_login .input_area span #input_num {
+    padding: 15px 16px; padding-right: 0; width: 90%; text-align: center;
+}
 /* 일회용번호 ----- 번호입력칸 , error 메세지 */
-#login_wrap main #loginFrm fieldset .login_container .disposable_login .error_message {}
+#login_wrap main #loginFrm fieldset .login_container .disposable_login .error_message {
+    color:#f00; font-size: 0.8rem; padding-top: 10px;
+}
 /* 일회용번호 ----- 로그인 버튼 */
 #login_wrap main #loginFrm fieldset .login_container .disposable_login .btn_area {}
-#login_wrap main #loginFrm fieldset .login_container .disposable_login .btn_area .tap2_loginBtn {}
+#login_wrap main #loginFrm fieldset .login_container .disposable_login .btn_area .tap2_loginBtn {
+    width:100%; background-color: #03c75a; color: #fff;
+    border-radius: 5px; padding: 16px 0; margin-top: 10px;
+    font-size: 1.25rem;
+}
 /* QR코드 */
 #login_wrap main #loginFrm fieldset .login_container .qr_login {
-    background: yellow;
+    text-align: center;
+    padding: 5px 0 15px;
 }
 /* QR코드 --------이미지, 남은시간 */
 #login_wrap main #loginFrm fieldset .login_container .qr_login {}
 #login_wrap main #loginFrm fieldset .login_container .qr_login .qr_code {}
 #login_wrap main #loginFrm fieldset .login_container .qr_login .qr_code .left {}
-#login_wrap main #loginFrm fieldset .login_container .qr_login .qr_code .left img {width: 100px;}
-#login_wrap main #loginFrm fieldset .login_container .qr_login .qr_code .right {}
+#login_wrap main #loginFrm fieldset .login_container .qr_login .qr_code .left img {width: 110px;}
+#login_wrap main #loginFrm fieldset .login_container .qr_login .qr_code .right {
+    position: absolute; right: 120px; top: 80px;
+}
 #login_wrap main #loginFrm fieldset .login_container .qr_login .qr_code .right p {}
 #login_wrap main #loginFrm fieldset .login_container .qr_login .qr_code .right p em {}
 /* QR코드 --------내용 */
-#login_wrap main #loginFrm fieldset .login_container .qr_comment {}
-#login_wrap main #loginFrm fieldset .login_container .qr_comment p {}
+#login_wrap main #loginFrm fieldset .login_container .qr_comment {margin-top: 10px;}
+#login_wrap main #loginFrm fieldset .login_container .qr_comment p {margin-bottom: 5px; line-height: 1.4;}
 /* QR코드 --------서브내용, QR코드 번호입력, 도움말 */
 #login_wrap main #loginFrm fieldset .login_container .sub_ment {}
-#login_wrap main #loginFrm fieldset .login_container .sub_ment p {}
+#login_wrap main #loginFrm fieldset .login_container .sub_ment p {
+    font-size: 0.75rem; color: #666; 
+}
 #login_wrap main #loginFrm fieldset .login_container .sub_ment p span {}
 #login_wrap main #loginFrm fieldset .login_container .sub_ment p span[class*=icon] {}
-#login_wrap main #loginFrm fieldset .login_container .sub_ment p span[class$=naver_app] {}
-#login_wrap main #loginFrm fieldset .login_container .sub_ment p span[class$=lense] {}
-#login_wrap main #loginFrm fieldset .login_container .sub_ment p span[class$=icon_q] {}
+#login_wrap main #loginFrm fieldset .login_container .sub_ment p span[class$=naver_app] {
+    content: ''; display: inline-block;
+    background-image:url(../images/m_sp_login.png);
+    width: 12px; height: 12px;
+    background-size: 251px 210px;
+    position: relative; z-index: 100; top: 0px; left: 0px;
+    background-position: -186px -59px;
+    transform: translateY(1px);
+    color: #333;
+}
+#login_wrap main #loginFrm fieldset .login_container .sub_ment p span[class$=lense] {
+    content: ''; display: inline-block;
+    background-image:url(../images/m_sp_login.png);
+    width: 12px; height: 12px;
+    background-size: 251px 210px;
+    position: relative; z-index: 100; top: 0px; left: 0px;
+    background-position: -186px -72px;
+    transform: translateY(2px);
+    color: #333;
+}
+#login_wrap main #loginFrm fieldset .login_container .sub_ment p span[class$=icon_q] {
+    content: ''; display: inline-block;
+    background-image:url(../images/m_sp_login.png);
+    width: 12px; height: 12px;
+    background-size: 251px 210px;
+    position: relative; z-index: 100; top: 0px; left: 0px;
+    background-position: -186px -47px;
+    transform: translateY(2px);
+    color: #333;
+}
 #login_wrap main #loginFrm fieldset .login_container .sub_ment p em {}
-#login_wrap main #loginFrm fieldset .login_container .sub_ment p .qr_num {}
+#login_wrap main #loginFrm fieldset .login_container .sub_ment p .qr_num {
+    background:#111; width: 24px; height: 15px; 
+    content: ''; display: inline-block; border-radius: 30px;
+    position: relative; top:3px;
+}
 /* QR코드 --------만료 페이지, error 메세지 */
-#login_wrap main #loginFrm fieldset .login_container .qr_error_comment {}
+#login_wrap main #loginFrm fieldset .login_container .qr_error_comment {display: none !important;}
 #login_wrap main #loginFrm fieldset .login_container .qr_error_comment .error_img {}
 #login_wrap main #loginFrm fieldset .login_container .qr_error_comment .error_img span {}
 #login_wrap main #loginFrm fieldset .login_container .qr_error_comment .qr_error_comment {}
 #login_wrap main #loginFrm fieldset .login_container .qr_error_comment .qr_error_comment p {}
-#login_wrap main #loginFrm fieldset .login_container .qr_error_comment .return {}
+#login_wrap main #loginFrm fieldset .login_container .qr_error_comment .return {display: none ;}
 #login_wrap main #loginFrm fieldset .login_container .qr_error_comment .return a {}
 #login_wrap main #loginFrm fieldset .login_container .qr_error_comment .return a span {}
 #login_wrap main #loginFrm fieldset .login_container .qr_error_comment .return a .icon_re {}
@@ -206,7 +279,7 @@
 /* 찾기 ~ 광고 */
 #login_wrap main .search {
     display: flex; justify-content: center;
-    padding-bottom: 30px;
+    padding-bottom: 30px; 
 }
 #login_wrap main .search a::after {
     content: ''; display: inline-block;
@@ -214,7 +287,7 @@
     background: #aaa; margin-left: 10px;
 }
 #login_wrap main .search a:last-child::after {display: none;}
-#login_wrap main .search a {margin-right: 10px;}
+#login_wrap main .search a {margin-right: 10px; color:#777;}
 #login_wrap main .advertising {}
 #login_wrap main .advertising a {}
 #login_wrap main .advertising a img {width: 100%;}

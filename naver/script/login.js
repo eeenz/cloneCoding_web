@@ -51,3 +51,57 @@ login_title[0].addEventListener('click',()=>{
     login_title[1].parentElement.classList.remove('active')
     login_title[2].parentElement.classList.remove('active')
 })
+// ===============================================
+
+console.log('로그인 메세지 출력')
+// 아이디 로그인 시 틀린 정보 는 입력되지 않은 정보에 따라 error message 출력하기
+// 1. 아이디 미입력 후 로그인 버튼 클릭 => '아이디를 입력해 주세요'
+// 2. 아이디 입력, 비밀번호 미입력 후 로그인 버튼 클릭 => '비밀번호를 입력해 주세요'
+// 3. 아이디, 비밀번호 입력 후 로그인 버튼 클릭 시 해당 정보가 맞지 않으면 => '아이디(로그인 전용 아이디) 또는 비밀번호를 잘못 입력했습니다. 입력하신 내용을 다시 확인해주세요.'
+// 4. 아이디, 비밀번호 입력 후 로그인 버튼 클릭 시 해당 정보가 맞다면 => 로그인 성공 팝업 '어서오세요 OO님'
+const userIdInput = document.querySelector('#userId')
+const userPwInput = document.querySelector('#userPw')
+const error_message = document.querySelector('.error_message')
+const loginBtn = document.querySelector('#loginBtn')
+const userList = [{
+    id:'admin',
+    name:'어드민',
+    pw:'1234',
+}]
+console.log(userIdInput,userPwInput,error_message,loginBtn)
+
+loginBtn.addEventListener('click',()=>{
+    if(userIdInput.value == ''){ // Q1.아이디 빈 문자열 검사 => 빈문자열이 참이라면
+        error_message.innerHTML =  '아이디를 입력해 주세요' //=> 참일 때 실행 결과
+    }else if(userPwInput.value == ''){ // Q2.아이디 입력이 되어 위 단계에서 넘어 왔으므로 아이디 확인은 필요가 없다.
+        error_message.innerHTML =  '비밀번호를 입력해 주세요'
+    }else if(userIdInput.value == userList[0].id && userPwInput.value == userList[0].pw){
+        alert(`어서오세요 ${userList[0].name}님 환영합니다.`)
+    }else {
+        error_message.innerHTML =  `아이디(로그인 전용 아이디) 또는 비밀번호를 잘못 입력했습니다.<br> 입력하신 내용을 다시 확인해주세요.`
+        userPwInput.value == ''; // 아이디는 남아있는데 비밀번호는 없어지게
+    }
+})
+// 일회용 번호
+// 1. 번호 미입력 후 로그인 버튼 클릭 => '일회용 로그인 번호를 입력하세요.'
+// 2. 번호 입력 후 로그인 버튼 클릭 시 해당 정보가 맞지 않으면 => '일회용 로그인 번호를 확인한 후 다시 입력해 주세요.'
+// 3. 번호 입력 후 로그인 버튼 클릭 시 해당 정보가 맞다면 => 로그인 성공 팝업 '어서오세요 OO님'
+const input_num = document.querySelector('#input_num')
+const tap2_loginBtn = document.querySelector('.tap2_loginBtn')
+const tap2_error_message = document.querySelector('.disposable_login > .error_message')
+const uselessNum = [{
+    num:'123456',
+    name:'user'
+}]
+console.log(input_num,tap2_loginBtn,tap2_error_message,uselessNum[0])
+
+tap2_loginBtn.addEventListener('click',()=>{
+    if(input_num.value == ''){
+        tap2_error_message.innerHTML = '일회용 로그인 번호를 입력하세요.'
+    }else if(input_num.value == uselessNum[0].num){
+        input_num.value == ''
+        alert(`어서오세요 ${uselessNum[0].name}님 환영합니다.`)
+    }else {
+        tap2_error_message.innerHTML = '일회용 로그인 번호를 확인한 후 다시 입력해 주세요.'
+    }
+})
