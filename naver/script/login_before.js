@@ -1,63 +1,56 @@
 // 로그인 탭 제목 클릭 시 해당 내용 활성화 js
+// 0. (초기) 로그인내용O, 일회용내용X, QR코드내용X , id로그인 제목 활성화 (CSS에서 활성화는 처리했음)
+// 1. ID로그인을 클릭하면 로그인내용O, 일회용내용X, QR코드내용X
+// 2. 일회용번호 클릭하면 로그인내용X, 일회용내용O, QR코드내용X
+// 3. QR코드 클릭하면 로그인내용X, 일회용내용X, QR코드내용O
 // 제목 변수
-const login_title = document.querySelectorAll('.login_title h2 > a')
-// -------------- 쌤이랑 확인 ----------------
-// 통합 내용 변수
-const login_c_all = document.querySelectorAll('.login_container .login_c')
+const login_title = document.querySelectorAll('.login_title h2 a')
+// 내용 변수
+const id_login_container = document.querySelector('.login_container .id_login')
+const disposable_login_container = document.querySelector('.login_container .disposable_login')
+const qr_login_container = document.querySelector('.login_container .qr_login')
+console.log(login_title,id_login_container,disposable_login_container,qr_login_container)
 
-// 초기 모든내용숨기기 -> ID로그인만 보이기
-const login_c_all_func = ()=>{
-    for(let cc of login_c_all){cc.style.display='none';}
-}
-login_c_all_func()
-login_c_all[0].style.display='block'
+// 23/01/15 초기 일회용내용, QR코드 내용 숨기기
+disposable_login_container.style.display = 'none';
+qr_login_container.style.display = 'none';
 
-// 초기값 ID로그인 탭 활성화 시키기(active) *클릭전
+// 23/01/16 초기값 ID로그인 탭 활성화 시키기(active) *클릭전
+// 위에 작성된 login_title변수로
 login_title[0].parentElement.classList.add('active')
-
-// 초기 탭 제목 디자인 숨기기
-const title_active_remove = ()=>{
-    for(let rr of login_title){rr.parentElement.classList.remove('active')}
-}
-
-// 탭 제목 클릭 시 클릭한 대상에만 디자인 적용하기
-login_title.forEach((t,i)=>{
-    t.addEventListener('click',()=>{
-        title_active_remove() //위에 적은 함수 호출 //제목탭 active 다 비활성화
-        t.parentElement.classList.add('active') //클릭된건 활성화
-        login_c_all_func() //위에 적은 함수 호출 // 내용탭 다 가리기
-        login_c_all[i].style.display='block' //내가 클릭한 i(index)와 동일한 대상을 보이게 해라
-    })
-})
-// -------------- 쌤이랑 확인 끝 ----------------
-
 /* 
-// --------------내가 작성한것----------------
-// 통합 내용 div 변수 생성
-const login_container = document.querySelectorAll('.login_container .login_c')
+새로운 변수 만든버전
+const tap_h2 = document.querySelectorAll('.login_title h2')
+tap_h2[0].classList.add('active') 
+*/
 
-// 23/01/19 초기 일회용내용, QR코드 내용 숨기기
-const tab_hide = ()=>{for(let c of login_container){c.style.display='none';}}
-tab_hide()
-login_container[0].style.display = 'block';
-
-// 초기 login_title의 [0]번만 탭활성화된 모습으로 설정하기
-const s_hide = ()=>{for(let s of login_title){s.parentElement.classList.remove('active')}} //나머지는숨기기
-s_hide()
-login_title[0].parentElement.classList.add('active') //[0]만 활성화
-
-// 23/01/19 탭 활성화 시키기(active) *클릭했을때 해당 탭의 내용 출력하기
-login_title.forEach((obj,inx)=>{
-    obj.addEventListener('click',()=>{
-        tab_hide()
-        login_container[inx].style.display = 'block';
-        s_hide()  //숨기는 함수호출
-        login_title[inx].parentElement.classList.add('active')//클릭시 [인덱스]만 활성화
-    })
+// 2. 일회용번호 클릭하면 로그인내용X, 일회용내용O, QR코드내용X
+login_title[1].addEventListener('click', ()=>{
+    id_login_container.style.display = 'none';
+    disposable_login_container.style.display = 'block';
+    qr_login_container.style.display = 'none';
+    login_title[0].parentElement.classList.remove('active')
+    login_title[1].parentElement.classList.add('active')
+    login_title[2].parentElement.classList.remove('active')
 })
---------------내가 작성한것 끝----------------
- */
-
+// 3. QR코드 클릭하면 로그인내용X, 일회용내용X, QR코드내용O
+login_title[2].addEventListener('click',()=>{
+    id_login_container.style.display = 'none';
+    disposable_login_container.style.display = 'none';
+    qr_login_container.style.display = 'block';
+    login_title[0].parentElement.classList.remove('active')
+    login_title[1].parentElement.classList.remove('active')
+    login_title[2].parentElement.classList.add('active')
+})
+// 1. ID로그인을 클릭하면 로그인내용O, 일회용내용X, QR코드내용X
+login_title[0].addEventListener('click',()=>{
+    id_login_container.style.display = 'block';
+    disposable_login_container.style.display = 'none';
+    qr_login_container.style.display = 'none';
+    login_title[0].parentElement.classList.add('active')
+    login_title[1].parentElement.classList.remove('active')
+    login_title[2].parentElement.classList.remove('active')
+})
 // ===============================================
 
 console.log('로그인 메세지 출력')
