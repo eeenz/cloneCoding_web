@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mouse</title>
+    <link rel="stylesheet" href="./styles/reset.css">
+    <style>
+        .circle {
+            width: 50px; height: 50px;
+            border-radius: 50%;
+            background: #ff0;
+            position:fixed;
+            transform: translate(-50%, -50%); /* 마우스가 원의 가운데로 오게 */
+            pointer-events:none; /* 포인터를 변경 시 필수속성 -> 서클의 포인터 이벤트를 막겠다 -> 이걸해야 js에서 이벤트 선언 시 클릭등 이벤트가 가능하다. 이속성의 포인터이벤트를 막아 a를 클릭할 수 있게 했다. */
+        }
+        main {
+            background: radial-gradient(circle, aqua, pink);
+            height:800px; width: 100%;
+        }
+        /* js */
+        .design1 {opacity:0.5;}
+    </style>
+</head>
+<body>
+    <h1>mouse event</h1>
+    <div class="circle"></div>
+    <main>
+        <a href="https://google.com">google</a>
+    </main>
+
+    <script>
+        //circle => css에서 position:fixed;를 줘서 js에서 left와 top값을 줄 수 있게 만들어 놨다.
+        const circle = document.querySelector('.circle') 
+        const google_a = document.querySelector('main a')
+        // mouse
+        window.addEventListener('mousemove',(e)=>{
+            // console.log(`screenX= ${e.screenX} , clientX= ${e.clientX}`) //screen : 모니터기준 / client : 뷰포트기준(내가보는 화면기준)
+            console.log(`clientX= ${e.clientX}`)
+            circle.style.left = `${e.clientX}px`;
+            circle.style.top = `${e.clientY}px`;
+        })
+        // google_a에 마우스를 올렸을 때 .design1 클래스(오페시티0.5)를 생성 -> 아웃했을 때 지우기
+        google_a.addEventListener('mouseover',()=>{
+            circle.classList.add('design1')
+        })
+        google_a.addEventListener('mouseout',()=>{
+            circle.classList.remove('design1')
+        })
+    </script>
+</body>
+</html>
